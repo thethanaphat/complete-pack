@@ -373,6 +373,51 @@
     .system-caption strong { display: block; margin-bottom: 4px; }
     .system-plus { color: var(--gold); font-size: 30px; font-weight: 700; }
 
+    /* PTM 5-Step Setup Validation */
+    .validation-svg { display: block; margin-top: 26px; }
+    .validation-svg svg { width: 100%; height: auto; display: block; }
+    .validation-grid { display: none; }
+    .validation-card {
+      background: rgba(18,36,58,.55);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 17px 18px;
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .validation-card:last-child { border-color: rgba(34,197,179,.42); }
+    .validation-num {
+      width: 34px; height: 34px; border-radius: 50%;
+      display: grid; place-items: center;
+      font-family: var(--font-mono); font-size: 15px; font-weight: 700;
+      color: var(--navy);
+      background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+    }
+    .validation-card:last-child .validation-num {
+      background: linear-gradient(180deg, var(--teal), var(--teal-dark));
+    }
+    .validation-card h3 { margin: 4px 0 4px; color: var(--white); font-size: 17px; }
+    .validation-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+    .validation-note {
+      margin-top: 22px;
+      padding: 18px 22px;
+      border: 1px solid var(--line-gold);
+      background: rgba(232,201,107,.07);
+      border-radius: 14px;
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.65;
+      text-align: center;
+    }
+    .validation-note strong { color: var(--gold); }
+    @media (max-width: 900px) {
+      .validation-svg { display: none; }
+      .validation-grid { display: grid; grid-template-columns: 1fr; gap: 11px; margin-top: 24px; }
+      .validation-note { text-align: left; padding: 16px 18px; font-size: 14.5px; }
+    }
+
     .curriculum-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -913,6 +958,7 @@
           <h2 class="section-title">PTM Lite + AI Workflow <span>ทำงานร่วมกันอย่างไร</span></h2>
           <p class="section-intro">
             PTM Lite ช่วยทำให้สิ่งที่เกิดขึ้นบนกราฟมองเห็นง่ายขึ้น ส่วน AI Workflow ช่วยให้คุณคิดก่อนเข้าและทบทวนหลังเทรดอย่างมีโครงสร้าง
+            โดยมี PTM 5-Step Setup Validation เป็นเกณฑ์กลางที่ใช้ตรวจทุกจังหวะก่อนตัดสินใจ
           </p>
         </div>
 
@@ -930,6 +976,94 @@
             <strong>AI Workflow = ช่วยให้คิดเป็นระบบ</strong>
             เช็ก Bias, Entry, SL, TP, Risk : Reward และสรุปบทเรียนจาก Journal
           </div>
+        </div>
+
+        <div class="validation-svg">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 310" role="img" aria-label="PTM 5-Step Setup Validation: Trend, Location, Trigger, Risk, Decision">
+            <defs>
+              <linearGradient id="v5gold" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e8c96b"/><stop offset="1" stop-color="#c9a84c"/>
+              </linearGradient>
+              <linearGradient id="v5teal" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#22c5b3"/><stop offset="1" stop-color="#159486"/>
+              </linearGradient>
+            </defs>
+            <style>
+              .v5lbl{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2.4px;fill:#e8c96b}
+              .v5br{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.6px;fill:#6582a3}
+              .v5n{font-family:'IBM Plex Mono',monospace;font-size:17px;font-weight:700;fill:#071522}
+              .v5t{font-family:'IBM Plex Sans Thai',sans-serif;font-size:19px;font-weight:600;fill:#f6f9fd}
+              .v5d{font-family:'IBM Plex Sans Thai',sans-serif;font-size:13px;fill:#9bafca}
+              .v5no{font-family:'IBM Plex Sans Thai',sans-serif;font-size:14.5px;fill:#e8eff8}
+              .v5nb{font-family:'IBM Plex Sans Thai',sans-serif;font-size:14.5px;font-weight:600;fill:#e8c96b}
+            </style>
+            <text class="v5lbl" x="2" y="14">PTM 5-STEP SETUP VALIDATION</text>
+            <text class="v5br" x="1118" y="14" text-anchor="end">PTM LITE · AI EDITION</text>
+            <line x1="32" y1="48" x2="948" y2="48" stroke="#82aedb" stroke-opacity="0.22" stroke-width="1.5" stroke-dasharray="5 7"/>
+
+            <rect x="0" y="48" width="204" height="170" rx="14" fill="#12243a" stroke="#82aedb" stroke-opacity="0.16"/>
+            <circle cx="32" cy="48" r="19" fill="url(#v5gold)"/>
+            <text class="v5n" x="32" y="54" text-anchor="middle">1</text>
+            <text class="v5t" x="22" y="100">Trend</text>
+            <text class="v5d" x="22" y="130">มีเทรนด์จริงไหม</text>
+            <text class="v5d" x="22" y="152">และมองถูกฝั่งหรือเปล่า</text>
+
+            <rect x="229" y="48" width="204" height="170" rx="14" fill="#12243a" stroke="#82aedb" stroke-opacity="0.16"/>
+            <circle cx="261" cy="48" r="19" fill="url(#v5gold)"/>
+            <text class="v5n" x="261" y="54" text-anchor="middle">2</text>
+            <text class="v5t" x="251" y="100">Location</text>
+            <text class="v5d" x="251" y="130">ย่อมาในจุดที่ยังมี Room</text>
+            <text class="v5d" x="251" y="152">พอให้ราคาวิ่งไหม</text>
+
+            <rect x="458" y="48" width="204" height="170" rx="14" fill="#12243a" stroke="#82aedb" stroke-opacity="0.16"/>
+            <circle cx="490" cy="48" r="19" fill="url(#v5gold)"/>
+            <text class="v5n" x="490" y="54" text-anchor="middle">3</text>
+            <text class="v5t" x="480" y="100">Trigger</text>
+            <text class="v5d" x="480" y="130">เงื่อนไขยืนยันครบตาม</text>
+            <text class="v5d" x="480" y="152">Entry Model หรือยัง</text>
+
+            <rect x="687" y="48" width="204" height="170" rx="14" fill="#12243a" stroke="#82aedb" stroke-opacity="0.16"/>
+            <circle cx="719" cy="48" r="19" fill="url(#v5gold)"/>
+            <text class="v5n" x="719" y="54" text-anchor="middle">4</text>
+            <text class="v5t" x="709" y="100">Risk</text>
+            <text class="v5d" x="709" y="130">Entry / SL / TP / Size</text>
+            <text class="v5d" x="709" y="152">ผ่านกฎและคุ้มความเสี่ยงไหม</text>
+
+            <rect x="916" y="48" width="204" height="170" rx="14" fill="#12243a" stroke="#22c5b3" stroke-opacity="0.42"/>
+            <circle cx="948" cy="48" r="19" fill="url(#v5teal)"/>
+            <text class="v5n" x="948" y="54" text-anchor="middle">5</text>
+            <text class="v5t" x="938" y="100">Decision</text>
+            <text class="v5d" x="938" y="130">ผ่าน · รอ</text>
+            <text class="v5d" x="938" y="152">งดเทรด · ข้อมูลไม่พอ</text>
+          </svg>
+        </div>
+
+        <div class="validation-grid">
+          <article class="validation-card">
+            <div class="validation-num">1</div>
+            <div><h3>Trend</h3><p>มีเทรนด์จริงไหม และเรามองถูกฝั่งหรือเปล่า</p></div>
+          </article>
+          <article class="validation-card">
+            <div class="validation-num">2</div>
+            <div><h3>Location</h3><p>ย่อมาในจุดที่ยังมี Room พอให้ราคาวิ่งไหม</p></div>
+          </article>
+          <article class="validation-card">
+            <div class="validation-num">3</div>
+            <div><h3>Trigger</h3><p>เงื่อนไขยืนยันครบตาม Entry Model ที่เลือกหรือยัง</p></div>
+          </article>
+          <article class="validation-card">
+            <div class="validation-num">4</div>
+            <div><h3>Risk</h3><p>Entry / SL / TP / Size ผ่านกฎและคุ้มความเสี่ยงไหม</p></div>
+          </article>
+          <article class="validation-card">
+            <div class="validation-num">5</div>
+            <div><h3>Decision</h3><p>ผ่าน · รอ · งดเทรด · ข้อมูลไม่พอ</p></div>
+          </article>
+        </div>
+
+        <div class="validation-note">
+          เมื่อ PTM Lite ให้สัญญาณ ขั้นตอนถัดไปคือแคปกราฟส่งให้ AI ตรวจด้วย PTM 5-Step Setup Validation —
+          <strong>AI ตรวจกับ IPS ที่คุณตั้งไว้เอง</strong> ไม่ได้สร้างแผนใหม่ และไม่ได้ตัดสินใจแทน
         </div>
       </div>
     </section>
@@ -1238,6 +1372,10 @@
                 ไม่ใช่ระบบซื้อขายอัตโนมัติหรือคำสั่งให้เข้าออเดอร์ทันที
               </p>
               <p>การตัดสินใจจริงต้องพิจารณา Trade Plan, ความเสี่ยง และบริบทตลาดของตัวเองเสมอ</p>
+              <p>
+                สิ่งที่หลักสูตรสอนคือขั้นตอนถัดจากสัญญาณ — แคปกราฟส่งให้ AI ตรวจด้วย PTM 5-Step Setup Validation
+                (Trend · Location · Trigger · Risk · Decision) ซึ่งผลลัพธ์มี 4 สถานะคือ ผ่าน · รอ · งดเทรด · ข้อมูลไม่พอ
+              </p>
             </div>
           </details>
 
