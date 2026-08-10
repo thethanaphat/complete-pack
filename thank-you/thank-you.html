@@ -413,13 +413,6 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '936259682502763');
     fbq('track', 'PageView');
-    fbq('track', 'Purchase', {
-      value: 2490,
-      currency: 'THB',
-      content_ids: ['complete_pack_2490'],
-      content_type: 'product',
-      content_name: 'Complete Pack — AI Workflow + PTM Lite + eBook'
-    });
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=936259682502763&amp;ev=PageView&amp;noscript=1"
@@ -557,19 +550,98 @@
 
   <!-- ===== SCRIPTS ===== -->
   <script>
-    // Show Order ID from URL session_id
-    (function() {
+    // ===== CAPI / Meta Purchase bridge =====
+    // The Stripe Checkout Session ID is the shared event ID used for
+    // browser/server deduplication. Purchase value is NOT hard-coded here.
+    // The Railway endpoint verifies the Stripe session, returns trusted
+    // purchase details, and receives browser context for Meta CAPI.
+    const CAPI_CONTEXT_ENDPOINT =
+      'https://thanaphat-meta-capi-production.up.railway.app/purchase/context';
+
+    function getCookie(name) {
+      const prefix = name + '=';
+      const parts = document.cookie ? document.cookie.split(';') : [];
+      for (let i = 0; i < parts.length; i++) {
+        const value = parts[i].trim();
+        if (value.indexOf(prefix) === 0) {
+          return decodeURIComponent(value.substring(prefix.length));
+        }
+      }
+      return null;
+    }
+
+    async function initializePurchaseTracking() {
       const params = new URLSearchParams(window.location.search);
       const sessionId = params.get('session_id');
       const display = document.getElementById('order-id-display');
-      if (sessionId) {
-        const short = sessionId.length > 16
-          ? sessionId.slice(0, 12) + '…' + sessionId.slice(-4)
-          : sessionId;
-        display.textContent = short;
-        display.title = sessionId;
+
+      if (!sessionId) {
+        console.warn('No Stripe session_id found. Purchase event was not sent.');
+        return;
       }
-    })();
+
+      // Show a shortened Order ID on screen while preserving the full ID in title.
+      const short = sessionId.length > 16
+        ? sessionId.slice(0, 12) + '…' + sessionId.slice(-4)
+        : sessionId;
+      display.textContent = short;
+      display.title = sessionId;
+
+      // Use the Stripe Checkout Session ID as the shared Meta event ID.
+      const eventId = sessionId;
+      const browserGuardKey = 'meta_purchase_sent_' + eventId;
+
+      try {
+        const response = await fetch(CAPI_CONTEXT_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            session_id: sessionId,
+            event_id: eventId,
+            event_source_url: window.location.href,
+            client_user_agent: navigator.userAgent,
+            fbp: getCookie('_fbp'),
+            fbc: getCookie('_fbc')
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error('CAPI context endpoint returned HTTP ' + response.status);
+        }
+
+        const result = await response.json();
+
+        if (!result || result.success !== true || !result.purchase) {
+          throw new Error('Purchase was not verified by the server');
+        }
+
+        // Prevent repeated browser Purchase events on refresh in the same browser.
+        if (sessionStorage.getItem(browserGuardKey) === '1') {
+          return;
+        }
+
+        const purchase = result.purchase;
+
+        fbq('track', 'Purchase', {
+          value: purchase.value,
+          currency: purchase.currency,
+          content_ids: purchase.content_ids || [],
+          content_type: purchase.content_type || 'product',
+          content_name: purchase.content_name || 'Complete Pack'
+        }, {
+          eventID: eventId
+        });
+
+        sessionStorage.setItem(browserGuardKey, '1');
+      } catch (error) {
+        // Fail closed: never send a guessed/hard-coded Purchase value.
+        console.error('Purchase tracking not sent:', error);
+      }
+    }
+
+    initializePurchaseTracking();
 
     // Copy-to-clipboard buttons
     document.querySelectorAll('[data-copy]').forEach(function(btn) {
