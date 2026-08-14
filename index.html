@@ -851,6 +851,71 @@
     }
     .right-item strong { display: block; margin-bottom: 3px; }
 
+    .contact-inline {
+      margin-top: 10px;
+      color: var(--dim);
+      font-size: 13px;
+    }
+    .contact-inline a {
+      color: var(--teal);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      align-items: center;
+      padding: 30px 32px;
+      border: 1px solid rgba(34,197,179,.28);
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(34,197,179,.09), transparent 34%),
+        rgba(18,36,58,.62);
+    }
+    .contact-card h2 {
+      margin: 6px 0 8px;
+      color: var(--white);
+      font-size: clamp(26px, 3.4vw, 38px);
+      line-height: 1.22;
+      letter-spacing: -.02em;
+    }
+    .contact-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .contact-actions {
+      display: grid;
+      gap: 11px;
+    }
+    .contact-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 56px;
+      padding: 13px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(7,21,34,.58);
+      color: var(--white);
+      font-weight: 600;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .contact-btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(34,197,179,.45);
+      background: rgba(34,197,179,.07);
+    }
+    .contact-btn span {
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
     .faq { max-width: 860px; margin-inline: auto; display: grid; gap: 10px; }
     .faq details {
       border: 1px solid var(--line);
@@ -932,6 +997,7 @@
       .curriculum-card { display: grid; grid-template-columns: minmax(280px, .9fr) 1.1fr; align-items: center; }
       .offer-wrap { grid-template-columns: 1fr; }
       .rights-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-card { grid-template-columns: 1fr; }
       .ea-benefits { grid-template-columns: repeat(2, 1fr); }
       .weeks { grid-template-columns: repeat(2, 1fr); }
     }
@@ -991,6 +1057,9 @@
       .value-card, .offer-card { padding: 24px 21px; }
       .offer-price { font-size: 48px; }
       .rights-grid { grid-template-columns: 1fr 1fr; }
+      .contact-card { padding: 24px 20px; }
+      .contact-btn { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .contact-btn span { white-space: normal; }
       .final-cta .cta { min-width: 0; width: 100%; }
       .mobile-cta { display: block; }
       footer { padding-bottom: 104px; }
@@ -1044,15 +1113,16 @@
             </a>
           </div>
           <div class="hero-note">สมัครเสร็จ รับ Welcome email พร้อมลิงก์เรียนและไฟล์ทั้งหมดอัตโนมัติทันที</div>
+          <div class="contact-inline">มีคำถามก่อนสมัคร? <a href="#contact">ดูช่องทางติดต่อ LINE OA / Messenger</a></div>
 
           <div class="hero-promo" data-promo-only>
             <div class="hero-promo-top">
-              <span class="hero-promo-badge">★ BONUS รอบพิเศษ · แรงที่สุดเท่าที่เคยมี</span>
+              <span class="hero-promo-badge">★ BONUS รอบพิเศษ · EasyTrade EA</span>
               <span class="hero-promo-limit">20 คนแรกเท่านั้น</span>
             </div>
             <p><strong>รับเพิ่ม EasyTrade EA — Trading Assistant สำหรับ MT4/MT5 มูลค่า ฿2,900</strong> โดยยังคงราคา Complete Pack ที่ ฿2,490</p>
             <p class="hero-promo-rule">ปิดรับโบนัสทันทีเมื่อครบ 20 สิทธิ์ หรือวันที่ 20 ส.ค. 2026 เวลา 23:59 น. — แล้วแต่อย่างใดถึงก่อน</p>
-            <p>เลือก MT4 หรือ MT5 อย่างใดอย่างหนึ่ง · นี่คือโปรที่คุ้มที่สุดของ Complete Pack และไม่ได้เปิดบ่อย — หากมีรอบถัดไป ราคาจะสูงกว่ารอบนี้</p>
+            <p>เลือก MT4 หรือ MT5 อย่างใดอย่างหนึ่ง · โบนัสนี้เป็นสิทธิ์เฉพาะ Special Campaign รอบนี้</p>
           </div>
 
           <div class="hero-proof">
@@ -1490,6 +1560,7 @@
               ชำระผ่าน Stripe · รองรับบัตรและพร้อมเพย์
               <span data-promo-only> · โบนัสปิดเมื่อครบ 20 สิทธิ์ หรือ 20 ส.ค. 2026 แล้วแต่อย่างใดถึงก่อน</span>
             </div>
+            <div class="contact-inline" style="text-align:center;">ยังไม่แน่ใจหรือมีคำถาม? <a href="#contact">ติดต่อ LINE OA / Messenger ก่อนสมัครได้ครับ</a></div>
           </div>
         </div>
 
@@ -1498,6 +1569,28 @@
           <div class="right-item"><strong>ดูย้อนหลังได้</strong>เรียนตามจังหวะและกลับมาทบทวนได้</div>
           <div class="right-item"><strong>Indicator Lifetime</strong>ไม่มีค่าต่ออายุ PTM Lite รายปี</div>
           <div class="right-item"><strong>Support</strong>กลุ่ม Line สำหรับคำถามการใช้งาน</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <div class="section-label">Contact & Support</div>
+            <h2>มีคำถามก่อนสมัคร?</h2>
+            <p>หากยังไม่แน่ใจว่า Complete Pack เหมาะกับคุณหรือไม่ หรือต้องการสอบถามเรื่องคอร์ส เครื่องมือ หรือขั้นตอนการสมัคร สามารถติดต่อได้ทั้ง LINE OA และ Facebook Messenger ครับ</p>
+          </div>
+          <div class="contact-actions">
+            <a class="contact-btn" href="https://lin.ee/Wp36lIA" target="_blank" rel="noopener">
+              <span style="color:var(--white);font-size:15px;">💬 สอบถามทาง LINE OA</span>
+              <span>@516ipohw</span>
+            </a>
+            <a class="contact-btn" href="https://m.me/thethanaphat" target="_blank" rel="noopener">
+              <span style="color:var(--white);font-size:15px;">💬 สอบถามทาง Messenger</span>
+              <span>เพจ อ.ใหม่ ธนภัทร</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -1591,8 +1684,9 @@
             <div class="faq-answer">
               <p>ชำระผ่าน Stripe ได้ทั้งบัตรเครดิต/เดบิตและพร้อมเพย์</p>
               <p>
-                หากกดชำระไม่สำเร็จหรือมีคำถาม สามารถติดต่อ Line OA
-                <a href="https://lin.ee/Wp36lIA" target="_blank" rel="noopener">@516ipohw</a>
+                หากกดชำระไม่สำเร็จหรือมีคำถาม สามารถติดต่อ
+                <a href="https://lin.ee/Wp36lIA" target="_blank" rel="noopener">LINE OA @516ipohw</a>
+                หรือ <a href="https://m.me/thethanaphat" target="_blank" rel="noopener">Facebook Messenger เพจ อ.ใหม่ ธนภัทร</a>
               </p>
             </div>
           </details>
