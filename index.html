@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="index, follow">
-  <title>Complete Pack Special Campaign — AI Workflow + PTM Lite + EasyTrade EA Bonus</title>
-  <meta name="description" content="Complete Pack สำหรับ Trader: AI Workflow + PTM Lite Lifetime + eBook และไฟล์ครบชุด ราคา 2,490 บาท พร้อม EasyTrade EA Trading Assistant Bonus สำหรับ 20 คนแรก หรือถึง 20 ส.ค. 2026 แล้วแต่อย่างใดถึงก่อน">
+  <title>Complete Pack = ระบบ + เครื่องมือ + ความรู้เสริม</title>
+  <meta name="description" content="Complete Pack สำหรับการเทรดและการลงทุนอย่างเป็นระบบ: AI Workflow + PTM Lite + eBook 3 เล่ม + คอร์ส AI 101 พร้อม EasyTrade EA Bonus ตามเงื่อนไขโปรโมชั่น">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Complete Pack Special Campaign — AI Workflow + PTM Lite + EasyTrade EA Bonus">
-  <meta property="og:description" content="AI Workflow + PTM Lite + ไฟล์ครบชุด พร้อม EasyTrade EA Trading Assistant Bonus สำหรับ 20 คนแรก หรือถึง 20 ส.ค. 2026 แล้วแต่อย่างใดถึงก่อน">
+  <meta property="og:title" content="Complete Pack = ระบบ + เครื่องมือ + ความรู้เสริม">
+  <meta property="og:description" content="AI Workflow + PTM Lite + eBook 3 เล่ม + คอร์ส AI 101 สำหรับการเทรดและการลงทุนอย่างเป็นระบบ พร้อม EasyTrade EA Bonus ตามเงื่อนไขโปรโมชั่น">
   <meta property="og:image" content="assets/ptm-04-ai-workflow.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,7 +49,7 @@
       --white: #f6f9fd;
       --text: #e8eff8;
       --muted: #9bafca;
-      --dim: #6582a3;
+      --dim: #7898ba;
       --teal: #22c5b3;
       --teal-dark: #159486;
       --gold: #e8c96b;
@@ -316,6 +316,34 @@
       box-shadow: 0 12px 30px rgba(0,0,0,.3);
     }
 
+    .hero-visual.hero-overview {
+      min-height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-overview-frame {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid rgba(143,168,200,.28);
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(242,247,252,.96));
+      box-shadow: 0 24px 70px rgba(0,0,0,.32);
+    }
+    .hero-overview-frame img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+    }
+    .hero-overview-caption {
+      margin-top: 14px;
+      color: var(--navy-4);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.55;
+      text-align: center;
+    }
+
     .problem-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -496,6 +524,18 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
+    }
+    .reviews-grid:focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 6px;
+    }
+    .reviews-swipe-hint {
+      display: none;
+      margin: -16px 0 14px;
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 600;
+      text-align: right;
     }
     .review-card {
       margin: 0;
@@ -1034,10 +1074,12 @@
         display: flex;
         gap: 14px;
         overflow-x: auto;
+        overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
         padding: 0 16px 10px;
         margin: 0 -16px;
       }
+      .reviews-swipe-hint { display: block; }
       .review-card {
         flex: 0 0 86%;
         scroll-snap-align: center;
@@ -1062,6 +1104,8 @@
       .contact-btn span { white-space: normal; }
       .final-cta .cta { min-width: 0; width: 100%; }
       .mobile-cta { display: block; }
+      .mobile-cta-controlled .mobile-cta { display: none; }
+      .mobile-cta-controlled .mobile-cta.is-visible { display: block; }
       footer { padding-bottom: 104px; }
     }
 
@@ -1090,18 +1134,20 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="hero-eyebrow">Complete Pack · EasyTrade ฟรีสำหรับ 20 คนแรก</div>
-          <h1>เห็นกราฟชัดขึ้น<br><span>คิดก่อนเข้าเป็นระบบขึ้น</span></h1>
+          <div class="hero-eyebrow">Complete Pack · ระบบ + เครื่องมือ + ความรู้เสริม</div>
+          <h1>Complete Pack =<br><span>ระบบ + เครื่องมือ + ความรู้เสริม</span></h1>
           <p class="hero-sub">
-            Complete Pack สำหรับ Trader ที่อยากใช้ <strong>PTM Lite</strong> ช่วยมองจังหวะบนกราฟ
-            และใช้ <strong>AI Workflow</strong> ช่วยวางแผน เช็กความเสี่ยง และทบทวนการเทรดอย่างเป็นกระบวนการ
+            สำหรับการเทรดและการลงทุนอย่างเป็นระบบ โดยมี <strong>AI Workflow</strong> เป็นกระบวนการ,
+            <strong>PTM Lite</strong> เป็นเครื่องมือช่วยอ่านกราฟ และ <strong>eBook 3 เล่ม + AI 101</strong>
+            เป็นความรู้เสริมที่ต่อกันเป็น Workflow เดียวตั้งแต่ดูกราฟจนถึงทบทวนผล
           </p>
 
           <div class="hero-points">
-            <span class="hero-point">วิดีโอครบ 10 คลิป</span>
+            <span class="hero-point">AI Workflow</span>
             <span class="hero-point">PTM Lite Lifetime</span>
-            <span class="hero-point">Templates + Prompt Pack</span>
-            <span class="hero-point">eBook ครบชุด</span>
+            <span class="hero-point">eBook 3 เล่ม</span>
+            <span class="hero-point">คอร์ส AI 101</span>
+            <span class="hero-point">Prompt + Template + Excel</span>
             <span class="hero-point" data-promo-only>EasyTrade EA Bonus</span>
           </div>
 
@@ -1112,7 +1158,7 @@
               รับ Complete Pack
             </a>
           </div>
-          <div class="hero-note">สมัครเสร็จ รับ Welcome email พร้อมลิงก์เรียนและไฟล์ทั้งหมดอัตโนมัติทันที</div>
+          <div class="hero-note">สมัครเสร็จ รับ Welcome email พร้อมลิงก์เรียนและไฟล์ดาวน์โหลดอัตโนมัติทันที</div>
           <div class="contact-inline">มีคำถามก่อนสมัคร? <a href="#contact">ดูช่องทางติดต่อ LINE OA / Messenger</a></div>
 
           <div class="hero-promo" data-promo-only>
@@ -1134,17 +1180,11 @@
 
         </div>
 
-        <div class="hero-visual" aria-label="ตัวอย่างเนื้อหาใน Complete Pack">
-          <div class="hero-card workflow">
-            <img src="assets/ai-workflow-trader-cover.png" alt="AI Workflow Trader Program">
+        <div class="hero-visual hero-overview" aria-label="ภาพรวมของ Complete Pack">
+          <div class="hero-overview-frame">
+            <img src="assets/complete-pack-final.png" alt="ภาพรวม Complete Pack: AI Workflow + PTM Lite + Ebook 3 เล่ม + AI 101 พร้อม EasyTrade EA">
+            <div class="hero-overview-caption">ภาพรวม Complete Pack: AI Workflow เป็นระบบหลัก, PTM Lite ช่วยขั้นวิเคราะห์และวางแผน, และ EasyTrade ช่วยตอนลงมือเทรด</div>
           </div>
-          <div class="hero-card chart">
-            <img src="assets/ptm-lite-chart.png" alt="ตัวอย่างกราฟจาก PTM Lite">
-          </div>
-          <div class="hero-card ebooks">
-            <img src="assets/ebook-x2.png" alt="eBook สำหรับนักลงทุน 2 เล่ม">
-          </div>
-          <div class="hero-badge">AI WORKFLOW<br>PTM LITE · EBOOK</div>
         </div>
       </div>
     </section>
@@ -1152,33 +1192,37 @@
     <section class="section alt">
       <div class="container">
         <div class="section-head">
-          <div class="section-label">ปัญหาที่แพ็กนี้ออกแบบมาแก้</div>
-          <h2 class="section-title">มีเครื่องมืออย่างเดียว <span>ยังไม่เท่ากับมีระบบ</span></h2>
+          <div class="section-label">Complete Pack Overview</div>
+          <h2 class="section-title">ในแพ็กนี้มี <span>3 ส่วนที่ทำงานต่อกัน</span></h2>
           <p class="section-intro">
-            Trader จำนวนมากไม่ได้ขาดข้อมูล แต่ขาดกระบวนการที่เชื่อมการดูกราฟ การวางแผน ความเสี่ยง และการทบทวนเข้าด้วยกัน
+            Complete Pack ไม่ได้เป็นแค่การเอาคอร์ส อินดิเคเตอร์ และไฟล์หลายอย่างมารวมกัน
+            แต่ถูกออกแบบให้เป็นกระบวนการเดียวสำหรับคนที่อยากเทรดและลงทุนอย่างเป็นระบบ
           </p>
         </div>
 
         <div class="problem-grid">
           <article class="problem-card">
-            <div class="problem-num">01 · SEE</div>
-            <h3>เห็นสัญญาณ แต่ยังแยกจังหวะที่ควรเทรดไม่ชัด</h3>
-            <p>มี Indicator หลายตัว แต่ยังไม่แน่ใจว่าตลาดกำลังเป็น Good Trend หรือ Sideway และควรให้ความสำคัญกับอะไร</p>
+            <div class="problem-num">01 · SYSTEM</div>
+            <h3>AI Workflow</h3>
+            <p>ระบบการใช้ AI เป็นผู้ช่วยตั้งแต่สร้างแผน เช็กตลาด วางแผนเทรด ลงมือ ไปจนถึงทบทวน Journal</p>
           </article>
           <article class="problem-card">
-            <div class="problem-num">02 · THINK</div>
-            <h3>ใช้ AI เป็นครั้ง ๆ แต่ยังไม่มี Workflow</h3>
-            <p>ถามข่าว วิเคราะห์กราฟ หรือขอคำแนะนำแยกกัน โดยยังไม่มี IPS, Trade Plan และ Prompt ที่เชื่อมต่อเป็นระบบ</p>
+            <div class="problem-num">02 · TOOL</div>
+            <h3>PTM Lite</h3>
+            <p>Indicator ที่ช่วยดู Trend, Momentum, ข้อมูลหลาย Timeframe และจุดที่ควรเข้าไปตรวจต่อด้วย AI</p>
           </article>
           <article class="problem-card">
-            <div class="problem-num">03 · REVIEW</div>
-            <h3>เทรดจบแล้ว แต่ไม่ได้เปลี่ยนประสบการณ์เป็นบทเรียน</h3>
-            <p>วัดผลจากกำไรขาดทุนเป็นหลัก จึงมองไม่เห็น Pattern ของแผน วินัย ความเสี่ยง และจุดที่ควรปรับจริง ๆ</p>
+            <div class="problem-num">03 · KNOWLEDGE</div>
+            <h3>eBook 3 เล่ม + AI 101</h3>
+            <p>ความรู้เสริมสำหรับมือใหม่และนักลงทุน ทั้งเรื่องการใช้ AI, ตลาดหุ้น USA และพื้นฐาน Heikin Ashi</p>
           </article>
         </div>
 
         <div class="bridge">
-          Complete Pack จึงไม่ได้ให้แค่ “เครื่องมือ” หรือ “Prompt” แต่จัดทั้งระบบให้คุณเห็น → คิด → วางแผน → ลงมือ → ทบทวน
+          Flow ง่าย ๆ: ดูกราฟ → วิเคราะห์ → วางแผน → ลงมือ → ทบทวน → ปรับปรุง
+        </div>
+        <div class="bridge" data-promo-only style="margin-top:14px; background:rgba(34,197,179,.08); border-color:rgba(34,197,179,.28); color:var(--text);">
+          โบนัสโปรโมชั่นรอบนี้: EasyTrade EA ช่วยในขั้นลงมือเทรดและจัดการออเดอร์สำหรับ MT4 / MT5
         </div>
       </div>
     </section>
@@ -1186,11 +1230,11 @@
     <section class="section">
       <div class="container">
         <div class="section-head">
-          <div class="section-label">The Complete Workflow</div>
-          <h2 class="section-title">PTM Lite + AI Workflow <span>ทำงานร่วมกันอย่างไร</span></h2>
+          <div class="section-label">The Process</div>
+          <h2 class="section-title">AI Workflow, PTM Lite และ EasyTrade <span>เชื่อมกันอย่างไร</span></h2>
           <p class="section-intro">
-            PTM Lite ช่วยทำให้สิ่งที่เกิดขึ้นบนกราฟมองเห็นง่ายขึ้น ส่วน AI Workflow ช่วยให้คุณคิดก่อนเข้าและทบทวนหลังเทรดอย่างมีโครงสร้าง
-            โดยมี PTM 5-Step Setup Validation เป็นเกณฑ์กลางที่ใช้ตรวจทุกจังหวะก่อนตัดสินใจ
+            AI Workflow คือกระบวนการหลัก 5 ขั้น โดยมี PTM Lite เข้ามาช่วยมากในขั้นที่ 2–3 คือเช็กภาพรวมตลาดและวางแผนเทรด
+            ส่วน EasyTrade เข้ามาช่วยในขั้นที่ 4 คือการลงมือเทรดและจัดการออเดอร์ให้สะดวกขึ้น
           </p>
         </div>
 
@@ -1414,7 +1458,8 @@
           <div class="reviews-stat">100+<small>ผู้สมัครแล้ว</small></div>
         </div>
 
-        <div class="reviews-grid">
+        <div class="reviews-swipe-hint" aria-hidden="true">ปัดเพื่อดูรีวิวเพิ่มเติม →</div>
+        <div class="reviews-grid" tabindex="0" aria-label="รีวิวผู้เรียน เลื่อนในแนวนอนเพื่อดูเพิ่มเติม">
           <figure class="review-card"><img src="assets/AI101_1.png" alt="รีวิวจากผู้เรียน AI 101 ชุดที่ 1" loading="lazy"></figure>
           <figure class="review-card"><img src="assets/AI101_2.png" alt="หลักฐานรีวิวจากผู้เรียน AI 101 ชุดที่ 2" loading="lazy"></figure>
           <figure class="review-card"><img src="assets/AI_Workflow_1.png" alt="รีวิวจากผู้เรียน AI Workflow ชุดที่ 1" loading="lazy"></figure>
@@ -1764,6 +1809,22 @@
 
       if (updatePromotion()) {
         window.setInterval(updatePromotion, 60000);
+      }
+
+      const mobileCta = document.querySelector('.mobile-cta');
+      const heroOffer = document.querySelector('.hero-offer');
+
+      if (mobileCta && heroOffer) {
+        document.documentElement.classList.add('mobile-cta-controlled');
+
+        function updateMobileCta() {
+          const heroOfferHasPassed = heroOffer.getBoundingClientRect().bottom < 0;
+          mobileCta.classList.toggle('is-visible', heroOfferHasPassed);
+        }
+
+        updateMobileCta();
+        window.addEventListener('scroll', updateMobileCta, { passive: true });
+        window.addEventListener('resize', updateMobileCta);
       }
     })();
   </script>
